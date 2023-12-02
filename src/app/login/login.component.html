@@ -1,0 +1,69 @@
+<!-- Font Awesome -->
+
+
+
+<link href='https://fonts.googleapis.com/css?family=Alegreya Sans SC'
+
+
+rel="stylesheet"
+/>
+
+
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"
+></script>
+
+<section class="vh-80">
+
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
+            alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+<span><h1> </h1></span>
+
+          <form (submit)="doLogin(f)" #f="ngForm">
+            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+             
+  
+              
+            </div>
+  
+        
+            <!-- Email input -->
+            <div class="form-group">
+              <label for="exampleInputEmail1">Username</label>
+              <input type="email" name="uname" ngModel class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username" required>
+            </div>
+           
+           
+  
+            <!-- Password input -->
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" name="upassword" ngModel class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+            </div>
+
+  
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a routerLink="/register"
+                  class="link-danger">Register</a></p>
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  </section>

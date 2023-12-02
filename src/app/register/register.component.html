@@ -1,0 +1,187 @@
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"
+  rel="stylesheet"
+/>
+
+
+
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"
+></script>
+
+
+
+
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+
+              <div class="alert alert-danger"
+              *ngIf="username.errors?.required && username.touched || useremail.errors?.required && useremail.touched||useremail.errors?.email && useremail.touched ||password.errors?.required && password.touched" >
+                  Invalid
+
+
+                </div>
+
+  
+    <form #r="ngForm" (submit)="register(r)">
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+
+                    <h6 class="mb-2 pb-1">Full name:</h6>
+  
+                    <div class="form-outline">
+                      <input type="text" id="firstName" class="form-control form-control-lg" ngModel #username="ngModel" required   name="uname" (blur)="regnameavail(username.value)"/>
+                      
+                      <label class="form-label" for="Full name"></label>
+
+                      <hr> 
+                    </div>
+                    
+
+
+                   
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <h6 class="mb-2 pb-1">Email: </h6>
+  
+                    <div class="form-outline">
+                      <input type="text" id="Email" class="form-control form-control-lg" #useremail="ngModel" required email placeholder="Email" name="uemail" ngModel  />
+                      <label class="form-label" for="Email"></label>
+                      <hr> 
+                    </div>
+                   
+                   
+
+                   
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+
+                    <div class="col-md-6 mb-4">
+
+                        <h6 class="mb-2 pb-1">Password: </h6>
+  
+                        <div class="form-outline">
+                          <input type="password" id="Email" class="form-control form-control-lg" #password="ngModel" required password placeholder="Password" name="upassword" ngModel   />
+                          <label class="form-label" for="Password"></label>
+
+                          <hr> 
+                        </div>
+    
+                      
+                        
+      
+                      </div>
+                  
+                  <div class="col-md-6 mb-4">
+  
+                    <h6 class="mb-2 pb-1">Gender: </h6>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="femaleGender"
+                        value="option1"
+                        checked
+                        #female="ngModel"
+                        
+                        name="ufemale"
+                        ngModel
+                      />
+                      <label class="form-check-label" for="femaleGender">Female</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="maleGender"
+                        value="option2"
+                        #male="ngModel"
+                        ngModel
+                        name="umale"
+                        
+
+
+
+                      />
+                      <label class="form-check-label" for="maleGender">Male</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="otherGender"
+                        value="option3"
+
+
+                      />
+                      <label class="form-check-label" for="otherGender">Other</label>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 ">
+
+                    <h6 class="mb-2 pb-1">Age: </h6>
+  
+                    <div class="form-outline">
+                      <input type="email" id="emailAddress" class="form-control form-control-lg" ngModel #age="ngModel" required name="uage"/>
+                      <hr> 
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4 ">
+                    <h6 class="mb-2 pb-1">Phone number: </h6>
+  
+                    <div class="form-outline">
+                      <input type="tel" id="phoneNumber" class="form-control form-control-lg" ngModel #ph="ngModel" required name="uphone"/>
+                      <hr> 
+                      
+                    </div>
+  
+                  </div>
+                </div>
+  
+                
+  
+                <div class="mt-4 pt-2">
+                  <input class="btn btn-primary btn-lg" type="submit" value="Register" /> 
+                </div>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
