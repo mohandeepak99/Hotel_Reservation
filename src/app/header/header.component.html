@@ -1,0 +1,26 @@
+
+
+
+<div class="bg">
+<div class="container">
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <span> <img src="assets/images/5-stars.png" style="height:60px ;"> </span> <span><h1>HOTEL RESERVATION</h1></span>
+      
+    </a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a routerLink="/" class="nav-link active" aria-current="page" *ngIf="!userSer.isLoggedin()">Login</a></li> &nbsp;
+
+      <li class="nav-item"><a routerLink="/booking" class="nav-link active" *ngIf="userSer.isLoggedin()"><b>BOOKING</b></a></li> &nbsp;
+      <li class="nav-item"><a routerLink="/photos" class="nav-link active" *ngIf="userSer.isLoggedin()"><b>GALLERY</b></a></li> &nbsp;
+      <li class="nav-item"><a routerLink="/mybookings/{{getUserId()}}" class="nav-link active" *ngIf="userSer.isLoggedin()" ><b>MY BOOKINGS </b></a></li> &nbsp;
+      <li class="nav-item"><a routerLink="/user" class="nav-link active " *ngIf="isadmin() "><b>CUSTOMERS</b></a></li> &nbsp;
+      <li class="nav-item"><a routerLink="/hotel" class="nav-link active " *ngIf="isadmin() " ><b>HOTEL MANAGEMENT</b></a></li> &nbsp;
+      <li class="nav-item"><a (click)="dologout()" class="nav-link active" aria-current="page" *ngIf="userSer.isLoggedin()"><b>LOGOUT</b></a></li> &nbsp;
+    </ul>
+  </header>
+</div>
+</div>
+

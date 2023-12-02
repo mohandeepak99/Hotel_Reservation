@@ -1,0 +1,275 @@
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"
+  rel="stylesheet"
+/>
+
+
+
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"
+></script>
+
+
+
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">{{msg1}} HOTEL</h3>
+
+              <div class="alert alert-danger"
+              *ngIf="username.errors?.required && username.touched || useremail.errors?.required && useremail.touched||useremail.errors?.email && useremail.touched" >
+                  Invalid
+
+
+                </div>
+
+  
+    <form #r ="ngForm" (submit)="reserve(r)" >
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+
+                    <h6 class="mb-2 pb-1">Full name:</h6>
+  
+                    <div class="form-outline">
+                      <input type="text" id="firstName" class="form-control form-control-lg" ngModel #username="ngModel" required   name="uname" />
+                      
+                      <label class="form-label" for="Full name"></label>
+
+                      <hr> 
+                    </div>
+                    
+
+
+                   
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <h6 class="mb-2 pb-1">Email: </h6>
+  
+                    <div class="form-outline">
+                      <input type="text" id="Email" class="form-control form-control-lg" #useremail="ngModel" required email  name="uemail" ngModel  />
+                      <label class="form-label" for="Email"></label>
+                      <hr> 
+                    </div>
+                   
+                   
+
+                   
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+
+                    <div class="col-md-6 mb-4">
+
+                        <h6 class="mb-2 pb-1">Phone Number: </h6>
+  
+                        <div class="form-outline">
+                          <input type="text" id="phone" class="form-control form-control-lg" #phone="ngModel" required  name="uphone" ngModel   />
+                          <label class="form-label" for="Phone number"></label>
+
+                          <hr> 
+                        </div>
+    
+                      
+                        
+      
+                      </div>
+                  
+                  <div class="col-md-6 mb-4">
+  
+                    <h6 class="mb-2 pb-1">TYPE: </h6>
+                    <br>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="A/C"
+                        value="A/C"
+                        checked
+                        #ac="ngModel"
+                        
+                        
+                        ngModel
+                      />
+                      <label class="form-check-label" for="A/C">A/C</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="NON A/C"
+                        value="NON A/C"
+                        #nonac="ngModel"
+                        ngModel
+                        
+                        
+
+
+
+                      />
+                      <label class="form-check-label" for="NON A/C">NON A/C</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="SUITE"
+                        value="SUITE"
+                      
+
+
+                      />
+                      <label class="form-check-label" for="SUITE">SUITE</label>
+                    </div>
+  
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-md-6 mb-4 ">
+
+                    <h6 class="mb-2 pb-1">No of people* </h6>
+  
+                    <div class="form-outline">
+                      <input type="number" id="people" class="form-control form-control-lg" ngModel #people="ngModel" required name="unum"/>
+                      <hr> 
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4 ">
+                    <h6 class="mb-2 pb-1">No of rooms* </h6>
+  
+                    <div class="form-outline">
+                      <input type="number" id="rooms" class="form-control form-control-lg" ngModel #rooms="ngModel" required name="urooms"/>
+                      <hr> 
+                      
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 ">
+
+                    <h6 class="mb-2 pb-1">CHECK IN DATE* </h6>
+  
+                    <div class="form-outline">
+                      <input type="date" id="checkin" class="form-control form-control-lg" ngModel #checkin="ngModel" required name="ucheckin"/>
+                      <hr> 
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4 ">
+                    <h6 class="mb-2 pb-1">CHECK OUT DATE* </h6>
+  
+                    <div class="form-outline">
+                      <input type="date" id="checkout" class="form-control form-control-lg" ngModel #checkout="ngModel" required name="ucheckout"/>
+                      <hr> 
+                      
+                    </div>
+  
+                  </div>
+                </div>
+
+
+
+                <div class="row">
+                  <div class="col-md-6 mb-4 ">
+
+                    <h6 class="mb-2 pb-1">HOTEL NAME</h6>
+  
+                    <div class="form-outline">
+                      <input type="text" id="hotel" class="form-control form-control-lg" [ngModel]="msg1" #hotel="ngModel" required name="uhotel"/>
+                      <hr> 
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4 ">
+                    <h6 class="mb-2 pb-1">PAYMENT METHOD* </h6>
+
+                    <br>
+
+
+
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOption"
+                        id="CREDIT/DEBIT CARD"
+                        value="CREDIT/DEBIT CARD"
+                        checked
+                        #ac="ngModel"
+                        
+                      
+                        ngModel
+                      />
+                      <label class="form-check-label" for="A/C">CREDIT/DEBIT CARD</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOption"
+                        id="CASH"
+                        value="CASH"
+                        #nonac="ngModel"
+                        ngModel
+                      
+                        
+
+
+
+                      />
+                      <label class="form-check-label" for="NON A/C">CASH</label>
+                    </div>
+  
+  
+                   
+  
+                  </div>
+                </div>
+
+              
+  
+                
+  
+                <div class="mt-4 pt-2">
+                  <input class="btn btn-primary btn-lg" type="submit" value="TAP TO PAY" /> 
+                </div>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
