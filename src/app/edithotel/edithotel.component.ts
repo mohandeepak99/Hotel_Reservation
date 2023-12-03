@@ -47,21 +47,6 @@ export class EdithotelComponent implements OnInit {
 
   }
 
-  edithotel(form:NgForm){
-
-    form.value._id=this.hoteldata._id;
-    console.log(form.value);
-
-    this.userSer.editsinglehoteldata(form.value).subscribe((data:string)=>{
-
-      console.log(data);
-      this.msg=data;
-
-      this.api.navigateByUrl("/hotel");
-
-    },(error:any)=>{
-      this.msg="something went wrong"
-    })
 
   
 
