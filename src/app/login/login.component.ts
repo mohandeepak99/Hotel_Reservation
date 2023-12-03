@@ -23,7 +23,32 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+    doLogin(form:NgForm){
 
+
+    console.log(form.value);
+    this.api.userlogin(form.value).subscribe((data:any[])=>{
+
+      console.log(data);
+      if(data.length==0){
+        this.msg="Invalid login!!"
+      }else{
+        localStorage.setItem("loggeduser",data[0]._id);
+        data[0].uname=="Adminuser"?localStorage.setItem('usertype','admin'):localStorage.setItem('usertype','user');
+        this.nav.navigateByUrl("/booking");
+      }
+    
+    
+    },(error:any)=>{
+      console.log(error);
+    },()=>{
+      console.log("call completed");
+    }
+    )
+
+  }
+
+}
 
 
 }
