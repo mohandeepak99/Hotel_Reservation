@@ -53,7 +53,20 @@ export class HotelmanagementComponent implements OnInit {
     }
   }
   
+  dosearch(search:string){
 
+    this.userSer.searchhotel(search).subscribe((data:any[])=>{
+
+      console.log(data);
+
+      this.hotels = data;
+
+    },(error:any)=>{
+
+      console.log(error);
+      
+    });
+  }
 
   
 }
