@@ -18,7 +18,7 @@
       <li class="nav-item"><a routerLink="/mybookings/{{getUserId()}}" class="nav-link active" *ngIf="userSer.isLoggedin()" ><b>MY BOOKINGS </b></a></li> &nbsp;
       <li class="nav-item"><a routerLink="/user" class="nav-link active " *ngIf="isadmin() "><b>CUSTOMERS</b></a></li> &nbsp;
       <li class="nav-item"><a routerLink="/hotel" class="nav-link active " *ngIf="isadmin() " ><b>HOTEL MANAGEMENT</b></a></li> &nbsp;
-      <li class="nav-item"><a (click)="dologout()" class="nav-link active" aria-current="page" *ngIf="userSer.isLoggedin()"><b>LOGOUT</b></a></li> &nbsp;
+      
     </ul>
   </header>
 </div>
