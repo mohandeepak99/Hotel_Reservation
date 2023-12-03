@@ -40,6 +40,17 @@ export class AddhotelComponent implements OnInit {
     this.userSer.hotelavailability(uname).subscribe((data:any[])=>{
       console.log(data);
 
+      if(data.length==0)
+      {
+        this.msg="hotel is avaialble for you";
+        this.hotelavailable=true;
+      }
+    
+      else{
+        this.msg="Hotel is unavailable right now";
+        this.hotelavailable=false;
+        
+      }
       
 
     },(error:any)=>{
