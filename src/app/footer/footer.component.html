@@ -1,40 +1,81 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Your Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
   <style>
-    /* Add your global styles here */ 
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    .fa {  
+  padding: 20px;  
+text-align: center;  
+  margin: 5px 2px;  
+  font-size: 30px;  
+  width: 50px;  
+}  
+    body p{
+      font-size: larger;
+      font-weight: bolder;
     }
-    .footer {
-      background-color: #555;
-      color: #fff;
+    body {
+      background-color: grey;
+      color: white;
       padding: 20px;
       text-align: center;
     }
-
-    .footer p {
-      margin: 0;
-      font-size: 14px;
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
     }
-
-    /* Add more styles as needed */
-
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+    }
+    .social-icons a:hover {
+      color: #ccc;
+    }
+    .signup {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .signup input[type="email"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-right: 10px;
+    }
+    .signup button {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #333;
+      color: white;
+    }
+    .signup button:hover {
+      background-color: #555;
+    }
   </style>
 </head>
 <body>
-  <!-- Your page content here -->
-
-  <br>
-  <br>
+  <p>Welcome to our hotel reservation site. Join us</p>
+  <p><b>BOOK ONLINE </b></p>
+  <p><b>OR CALL : 0****** </b></p>
   
-  <div class="footer">
-    <p>&copy; 2023 Your Website | All Rights Reserved.</p>
+  <div class="signup">
+    <label for="email">Sign up for reservation</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email address">
+    <button type="submit">Submit</button>
   </div>
+  <p>Follow us on</p>
+  <div class="social-icons">
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-youtube"></i></a>
+  </div>
+  <form>
+    <!-- reservation form fields go here -->
+  </form>
 </body>
 </html>
+
